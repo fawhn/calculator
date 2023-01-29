@@ -11,7 +11,6 @@ public class Calculator {
     public static void main(String[] args) throws Exception {
         String[] expSplitted;
         int x,y;
-        String romanX = "", romanY = "";
         boolean isRomanOperation = false;
         Integer res = null;
         String operation;
@@ -26,8 +25,6 @@ public class Calculator {
         if (RomanNumerals.isRoman(expSplitted[0]) && RomanNumerals.isRoman(expSplitted[2])) {
             x = RomanNumerals.parseInt(expSplitted[0]);
             y = RomanNumerals.parseInt(expSplitted[2]);
-            romanX = expSplitted[0];
-            romanY = expSplitted[2];
             isRomanOperation = true;
         } else if ((RomanNumerals.isRoman(expSplitted[0]) && !RomanNumerals.isRoman(expSplitted[2])) || (RomanNumerals.isRoman(expSplitted[2]) && !RomanNumerals.isRoman(expSplitted[0]))) {
             throw new Exception("Different number formats");
