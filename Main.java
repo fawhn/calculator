@@ -3,19 +3,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Calculator {
+public class Main {
     private static final String MULTIPLY = "*";
     private static final String DIVIDE = "/";
     private static final String ADD = "+";
     private static final String SUB = "-";
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) throws Exception{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String exp = reader.readLine();
+        calc(exp);
+    }
+    public static void calc(String exp) throws Exception {
         String[] expSplitted;
         int x,y;
         boolean isRomanOperation = false;
         Integer res = null;
         String operation;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String exp = reader.readLine();
         expSplitted = exp.split(" ");
 
         if (expSplitted.length != 3) throw new Exception("Invalid format, must be \"x + y\", \"x - y\", \"x * y\" or \"x / y\"");
